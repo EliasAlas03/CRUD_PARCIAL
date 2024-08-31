@@ -13,13 +13,16 @@ namespace DataAccess.Connection
     {
         private SqlConnection c = new SqlConnection("Data Source=ELIASALAS\\SQLEXPRESS;Initial Catalog=capasCRUD;Integrated Security=True;");
         
-        public SqlConnection OpenConnection()
+        public SqlConnection OpenConnection() 
+            // Esto abre la conexión
+        
         {
             if (c.State == ConnectionState.Closed) c.Open();
             return c;
         }
 
         public SqlConnection CloseConnection()
+            // Esta cierra la conexión
         {
             if (c.State == ConnectionState.Open) c.Close();
             return c;
